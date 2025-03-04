@@ -64,9 +64,46 @@ nvidia-smi
 ```bash
 pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu112
 ```
+## 8. Test the Installation
+### Run a small test or example script from the repository to verify the installation. For example:
+```bash
+python examples/example_script.py
+```
 
+## 9. Submit a Job (Optional)
+### If you need to run the project as a job on the cluster, create a job script (e.g., job_script.sh):
+```bash
+#!/bin/bash
+#PBS -P your_project_code
+#PBS -l select=1:ncpus=4:ngpus=1
+#PBS -l walltime=01:00:00
+#PBS -q serial
+#PBS -o output.log
+#PBS -e error.log
 
-conda --version
-conda create -n mlde_env python=3.8
+module load python/3.8.10
+module load cuda/11.2
 
-conda init
+cd $PBS_O_WORKDIR
+source mlde_env/bin/activate  # or conda activate mlde_env
+
+python your_script.py
+```
+Submit the job:
+
+```bash
+qsub job_script.sh
+```
+
+## 10. Monitor the Job
+### Check the status of your job:
+```bash
+qstat -u your_username
+```
+
+## Troubleshooting
+### If you encounter errors, check the following:
+- Ensure all dependencies are installed correctly.
+- Verify that the correct versions of Python, CUDA, and libraries are being used.
+- check the repository's documentation or issues page for additional guidance.
+
