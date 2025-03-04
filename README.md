@@ -33,7 +33,11 @@ cd mlde
 python -m venv mlde_env
 source mlde_env/bin/activate
 ```
-
+### If using Conda:
+```bash
+conda create --name mlde_env python=3.8
+conda activate mlde_env
+```
 
 
 conda --version
