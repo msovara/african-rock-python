@@ -20,7 +20,12 @@ If you prefer using Conda, load the Conda module:
 module load chpc/compmech/anaconda/3_23.9.0
 ```
 
-
+## 3. Clone the Repository
+### Clone the mlde repository from GitHub:
+```bash
+git clone https://github.com/henryaddison/mlde.git
+cd mlde
+```
 
 conda --version
 conda create -n mlde_env python=3.8
