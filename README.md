@@ -38,6 +38,15 @@ source mlde_env/bin/activate
 conda create --name mlde_env python=3.8
 conda activate mlde_env
 ```
+## 5. Install Dependencies
+### Install the required Python packages using pip:
+```bash
+pip install -r requirements.txt
+```
+### If there is no requirements.txt file, check the repository's documentation for specific installation instructions. You may need to install dependencies manually, such as:
+```bash
+pip install numpy pandas scikit-learn torch
+```
 
 
 conda --version
