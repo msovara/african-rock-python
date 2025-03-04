@@ -10,7 +10,7 @@ mkdir dev
 cd dev/
 ```
 
-## 2. Set Up the Environment
+## 2. Set Up the Environment ⚙️
 ### Load the necessary modules (Python and CUDA):
 ```bash
 module load chpc/compmech/python/3.11.6-gcc-12.1.0
@@ -21,14 +21,14 @@ If you prefer using Conda, load the Conda module:
 module load chpc/compmech/anaconda/3_23.9.0
 ```
 
-## 3. Clone the Repository
+## 3. Clone the Repository 📥
 ### Clone the mlde repository from GitHub:
 ```bash
 git clone https://github.com/henryaddison/mlde.git
 cd mlde
 ```
 
-## 4. Create a Virtual Environment
+## 4. Create a Virtual Environment 🛠️
 ### If using Python's venv:
 ```bash
 python -m venv mlde_env
@@ -39,7 +39,7 @@ source mlde_env/bin/activate
 conda create --name mlde_env python=3.8
 conda activate mlde_env
 ```
-## 5. Install Dependencies
+## 5.  Install Dependencies 📦
 ### Install the required Python packages using pip:
 ```bash
 pip install -r requirements.txt
@@ -49,14 +49,14 @@ pip install -r requirements.txt
 pip install numpy pandas scikit-learn torch
 ```
 
-## 6. Install the mlde Package
+## 6. install the mlde Package 📂
 ### If the repository is a Python package, install it in editable mode:
 ```bash
 pip install -e .
 ```
 This will install the package and make it available in your environment.
 
-## 7. Set Up CUDA and GPU Support
+## 7. Set Up CUDA and GPU Support 🎮
 ### Ensure CUDA is properly configured for GPU support. Check the available GPUs:
 ```bash
 nvidia-smi
@@ -65,13 +65,13 @@ nvidia-smi
 ```bash
 pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu112
 ```
-## 8. Test the Installation
+## 8. Test the Installation 🧪
 ### Run a small test or example script from the repository to verify the installation. For example:
 ```bash
 python examples/example_script.py
 ```
 
-## 9. Submit a Job (Optional)
+## 9. Submit a Job (Optional) 🚀
 ### If you need to run the project as a job on the cluster, create a job script (e.g., job_script.sh):
 ```bash
 #!/bin/bash
@@ -96,15 +96,14 @@ Submit the job:
 qsub job_script.sh
 ```
 
-## 10. Monitor the Job
+## 10.  Monitor the Job 👀
 ### Check the status of your job:
 ```bash
 qstat -u your_username
 ```
 
-## Troubleshooting
+## Troubleshooting 🔧
 ### If you encounter errors, check the following:
-- Ensure all dependencies are installed correctly.
-- Verify that the correct versions of Python, CUDA, and libraries are being used.
-- check the repository's documentation or issues page for additional guidance.
-
+✅ Ensure all dependencies are installed correctly.
+✅ Verify that the correct versions of Python, CUDA, and libraries are being used.
+✅ Check the repository's documentation or issues page for additional guidance.
