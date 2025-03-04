@@ -1,7 +1,8 @@
-# african-rock-python
-Covert legacy code to machine-learning Python routines for weather and climate modelling
+# 🐍 African Rock Python
+Covert legacy code to machine-learning Python routines for weather and climate modelling 🌍🌦️
 
-
+## 1. Connect to the Cluster 🔌
+### To begin, connect to the Lengau cluster via SSH:
 ```bash
 ssh -X jpadavatan@dtn.chpc.ac.za
 cd /mnt/lustre/users/jpadavatan/
