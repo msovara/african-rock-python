@@ -105,5 +105,7 @@ qstat -u your_username
 ## Troubleshooting 🔧
 ### If you encounter errors, check the following:
 ✅ Ensure all dependencies are installed correctly.
+
 ✅ Verify that the correct versions of Python, CUDA, and libraries are being used.
+
 ✅ Check the repository's documentation or issues page for additional guidance.
