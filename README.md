@@ -27,6 +27,15 @@ git clone https://github.com/henryaddison/mlde.git
 cd mlde
 ```
 
+## 4. Create a Virtual Environment
+### If using Python's venv:
+```bash
+python -m venv mlde_env
+source mlde_env/bin/activate
+```
+
+
+
 conda --version
 conda create -n mlde_env python=3.8
 
