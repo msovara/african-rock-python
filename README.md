@@ -83,8 +83,9 @@ python examples/example_script.py
 #PBS -o output.log
 #PBS -e error.log
 
-module load python/3.8.10
-module load cuda/11.2
+module purge
+module load chpc/compmech/python/3.11.6-gcc-12.1.0
+module load chpc/cuda/12.4/12.4
 
 cd $PBS_O_WORKDIR
 source mlde_env/bin/activate  # or conda activate mlde_env
