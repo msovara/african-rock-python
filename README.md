@@ -76,16 +76,17 @@ python examples/example_script.py
 ### If you need to run the project as a job on the cluster, create a job script (e.g., job_script.sh):
 ```bash
 #!/bin/bash
-#PBS -P your_project_code
+#PBS -N nameyourjob
+#PBS -q gpu_1
 #PBS -l select=1:ncpus=4:ngpus=1
-#PBS -l walltime=01:00:00
-#PBS -q serial
-#PBS -o output.log
-#PBS -e error.log
+#PBS -P PRJT1234
+#PBS -l walltime=4:00:00
+#PBS -m abe
+#PBS -M your.email@address
 
 module purge
 module load chpc/compmech/python/3.11.6-gcc-12.1.0
-module load chpc/cuda/12.4/12.4
+module load chpc/cuda/12.0/12.0
 
 cd $PBS_O_WORKDIR
 source mlde_env/bin/activate  # or conda activate mlde_env
