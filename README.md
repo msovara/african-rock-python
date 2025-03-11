@@ -86,7 +86,7 @@ python examples/example_script.py
 
 module purge
 module load chpc/compmech/python/3.11.6-gcc-12.1.0
-module load chpc/cuda/12.0/12.0
+module load chpc/cuda/12.4/12.4
 
 cd $PBS_O_WORKDIR
 source mlde_env/bin/activate  # or conda activate mlde_env
