@@ -69,7 +69,8 @@ pip install torch torchvision --extra-index-url https://download.pytorch.org/whl
 ## 8. Test the Installation 🧪
 ### Run a small test or example script from the repository to verify the installation. For example:
 ```bash
-python examples/example_script.py
+python mlde/tests/ml_downscaling_emulator/test_data.py
+python mlde/tests/ml_downscaling_emulator/test_postprocess.py
 ```
 
 ## 9. Submit a Job (Optional) 🚀
