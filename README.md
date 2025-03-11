@@ -13,6 +13,7 @@ cd dev/
 ## 2. Set Up the Environment ⚙️
 ### Load the necessary modules (Python and CUDA):
 ```bash
+module purge
 module load chpc/compmech/python/3.11.6-gcc-12.1.0
 module load chpc/cuda/12.4/12.4
 ```
