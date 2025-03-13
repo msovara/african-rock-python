@@ -60,7 +60,7 @@ This will install the package and make it available in your environment.
 ## 7. Set Up CUDA and GPU Support 🎮
 ### Ensure CUDA is properly configured for GPU support. Check the available GPUs:
 ```bash
-nvidia-smi
+nvidia-smi or
 ```
 ### If the project uses PyTorch or TensorFlow, ensure the correct GPU-enabled versions are installed. For example:
 ```bash
