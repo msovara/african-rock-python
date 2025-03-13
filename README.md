@@ -46,7 +46,7 @@ pip install -r requirements.txt
 pip install numpy pandas scikit-learn torch
 ```
 
-## 6. install the mlde Package 📂
+## 6. Install the mlde Package 📂
 ### If the repository is a Python package, install it in editable mode:
 ```bash
 pip install -e .
