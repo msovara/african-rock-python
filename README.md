@@ -77,7 +77,7 @@ python mlde/tests/ml_downscaling_emulator/test_postprocess.py
 #PBS -q gpu_1
 #PBS -l select=1:ncpus=4:ngpus=1
 #PBS -P PRJT1234
-#PBS -l walltime=4:00:00
+#PBS -l walltime=1:00:00
 #PBS -m abe
 #PBS -M your.email@address
 
