@@ -37,7 +37,8 @@ source mlde_env/bin/activate
 ```
 ### If using Conda:
 ```bash
-conda create --name mlde_env python=3.8
+conda create --name mlde_env python=3.11.5
+# python -V to see your version 
 conda activate mlde_env
 ```
 ## 5.  Install Dependencies 📦
