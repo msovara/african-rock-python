@@ -31,8 +31,6 @@ cd mlde
 
 ## 4. Create a Virtual Environment 🛠️
 ### We choose to use conda:
-```
-### If using Conda:
 ```bash
 conda create --name mlde_env python=3.11.5
 # python -V to see your version 
