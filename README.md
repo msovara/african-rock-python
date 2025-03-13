@@ -30,10 +30,7 @@ cd mlde
 ```
 
 ## 4. Create a Virtual Environment 🛠️
-### If using Python's venv:
-```bash
-python -m venv mlde_env
-source mlde_env/bin/activate
+### We choose to use conda:
 ```
 ### If using Conda:
 ```bash
@@ -61,7 +58,7 @@ This will install the package and make it available in your environment.
 ## 7. Set Up CUDA and GPU Support 🎮
 ### Ensure CUDA is properly configured for GPU support. Check the available GPUs:
 ```bash
-nvidia-smi or
+nvidia-smi or nvcc --version
 ```
 ### If the project uses PyTorch or TensorFlow, ensure the correct GPU-enabled versions are installed. For example:
 ```bash
