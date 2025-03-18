@@ -46,7 +46,7 @@ pip install -r requirements.txt
 pip install numpy pandas scikit-learn torch
 ```
 
-## 6. install the mlde Package 📂
+## 6. Install the mlde Package 📂
 ### If the repository is a Python package, install it in editable mode:
 ```bash
 pip install -e .
@@ -68,6 +68,7 @@ pip install torch torchvision --extra-index-url https://download.pytorch.org/whl
 python mlde/tests/ml_downscaling_emulator/test_data.py
 python mlde/tests/ml_downscaling_emulator/test_postprocess.py
 ```
+- Install all the required dependencies until the tests check out. 
 
 ## 9. Submit a Job (Optional) 🚀
 ### If you need to run the project as a job on the cluster, create a job script (e.g., job_script.sh):
@@ -77,7 +78,7 @@ python mlde/tests/ml_downscaling_emulator/test_postprocess.py
 #PBS -q gpu_1
 #PBS -l select=1:ncpus=4:ngpus=1
 #PBS -P PRJT1234
-#PBS -l walltime=4:00:00
+#PBS -l walltime=1:00:00
 #PBS -m abe
 #PBS -M your.email@address
 
@@ -88,7 +89,56 @@ module load chpc/cuda/12.4/12.4
 cd $PBS_O_WORKDIR
 source mlde_env/bin/activate  # or conda activate mlde_env
 
-python your_script.py
+#python your_script.py
+
+"""Training"""
+
+import ml_downscaling_emulator.run_lib as run_lib
+from absl import app
+from absl import flags
+from ml_collections.config_flags import config_flags
+import logging
+import os
+from dotenv import load_dotenv
+
+from knockknock import slack_sender
+
+load_dotenv()  # take environment variables from .env
+
+FLAGS = flags.FLAGS
+
+config_flags.DEFINE_config_file(
+    "config", None, "Training configuration.", lock_config=True
+)
+flags.DEFINE_string("workdir", None, "Work directory.")
+flags.DEFINE_enum("mode", None, ["train"], "Running mode: train")
+flags.mark_flags_as_required(["workdir", "config", "mode"])
+
+
+@slack_sender(webhook_url=os.getenv("KK_SLACK_WH_URL"), channel="general")
+def main(argv):
+    if FLAGS.mode == "train":
+        # Create the working directory
+        os.makedirs(FLAGS.workdir, exist_ok=True)
+        # Set logger so that it outputs to both console and file
+        # Make logging work for both disk and Google Cloud Storage
+        gfile_stream = open(os.path.join(FLAGS.workdir, "stdout.txt"), "w")
+        handler = logging.StreamHandler(gfile_stream)
+        formatter = logging.Formatter(
+            "%(levelname)s - %(filename)s - %(asctime)s - %(message)s"
+        )
+        handler.setFormatter(formatter)
+        logger = logging.getLogger()
+        logger.addHandler(handler)
+        logger.setLevel("INFO")
+        # Run the training pipeline
+        run_lib.train(FLAGS.config, FLAGS.workdir)
+    else:
+        raise ValueError(f"Mode {FLAGS.mode} not recognized.")
+
+
+if __name__ == "__main__":
+    app.run(main)
 ```
 Submit the job:
 
