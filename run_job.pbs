@@ -1,0 +1,22 @@
+#!/bin/bash
+#PBS -N mlde_emulator
+#PBS -q gpu_1
+#PBS -l select=1:ncpus=4:ngpus=1
+#PBS -P ERTH1200
+#PBS -l walltime=1:00:00
+#PBS -m abe
+#PBS -M jonathan.padavatan@wits.ac.za
+
+# Load necessary modules
+module purge
+module load chpc/compmech/python/3.11.6-gcc-12.1.0
+module load chpc/cuda/12.4/12.4
+
+# Change to the directory where the job was submitted
+cd $PBS_O_WORKDIR
+
+# Activate the virtual environment
+source mlde_env/bin/activate  # or conda activate mlde_env
+
+# Run the Python script
+python train_emulator.py
