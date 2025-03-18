@@ -68,7 +68,7 @@ pip install torch torchvision --extra-index-url https://download.pytorch.org/whl
 python mlde/tests/ml_downscaling_emulator/test_data.py
 python mlde/tests/ml_downscaling_emulator/test_postprocess.py
 ```
-- Install all the required dependencies until the tests run error free
+- Install all the required dependencies until the tests run error-free.
 
 ## 9. Submit a Job (Optional) 🚀
 ### If you need to run the project as a job on the cluster, create a job script (e.g., job_script.sh):
