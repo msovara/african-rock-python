@@ -1,11 +1,11 @@
 #!/bin/bash
-#PBS -N mlde_emulator
-#PBS -q gpu_1
+#PBS -N nameyourjob
+#PBS -q gputemp
 #PBS -l select=1:ncpus=4:ngpus=1
 #PBS -P ERTH1200
-#PBS -l walltime=1:00:00
+#PBS -l walltime=00:30:00
 #PBS -m abe
-#PBS -M jonathan.padavatan@wits.ac.za
+#PBS -M your.email@address
 
 # Load necessary modules
 module purge
