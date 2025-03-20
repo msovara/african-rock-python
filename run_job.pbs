@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -N nameyourjob
+#PBS -N ai_downscaling_training
 #PBS -q gputemp
 #PBS -l select=1:ncpus=4:ngpus=1
 #PBS -P ERTH1200
