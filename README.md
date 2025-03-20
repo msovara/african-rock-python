@@ -159,3 +159,24 @@ qstat -u your_username
 ✅ Verify that the correct versions of Python, CUDA, and libraries are being used.
 
 ✅ Check the repository's documentation or issues page for additional guidance.
+__
+## Mini git reference
+### when the changes are made on main repo- this is how you pull change to your local working directory
+ 1193  git pull https://github.com/msovara/african-rock-python.git
+ 1194  From https://github.com/msovara/african-rock-python
+ 1195   * branch            HEAD       -> FETCH_HEAD
+ 1196  Updating 94da765..ce06c6e
+ 1197  error: Your local changes to the following files would be overwritten by merge:
+ 1198          run_job.pbs
+ 1199  Please, commit your changes or stash them before you can merge.
+ 1200  git pull https://github.com/msovara/african-rock-python.git
+ 1201  git add run_job.pbs
+ 1202  git commit -m "add run job script"
+ 1203  git stash
+ 1204  git pull
+ 1205  ls
+ 1206  vi run_job.pbs
+ 1207  history
+(mlde_env) [jpadavatan@dtn african-rock-python]$ git pull
+Already up-to-date.
+
