@@ -6,6 +6,8 @@
 #PBS -l walltime=00:30:00
 #PBS -m abe
 #PBS -M your.email@address
+#PBS -o /mnt/lustre/usarccmGPUcase/sters/jblogs/star_1gpu.out
+#PBS -e /mnt/lustre/users/jblogs/starccmGPUcase/star_1gpu.err
 
 # Load necessary modules
 module purge
